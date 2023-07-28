@@ -13,7 +13,7 @@ public class Cliente extends Pessoa {
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany(mappedBy = "cliente")
-	private List<Chamados> chamados = new ArrayList<>();
+	private List<Chamado> chamados = new ArrayList<>();
 
 	public Cliente() {
 		super();
@@ -25,11 +25,11 @@ public class Cliente extends Pessoa {
 		addPerfil(Perfil.CLIENTE);
 	}
 
-	public List<Chamados> getChamados() {
+	public List<Chamado> getChamados() {
 		return chamados;
 	}
 
-	public void setChamados(List<Chamados> chamados) {
+	public void setChamados(List<Chamado> chamados) {
 		this.chamados = chamados;
 	}
 

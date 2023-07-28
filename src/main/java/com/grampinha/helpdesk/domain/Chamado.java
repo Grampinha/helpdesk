@@ -16,7 +16,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Chamados implements Serializable {
+public class Chamado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -42,11 +42,11 @@ public class Chamados implements Serializable {
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
 
-	public Chamados() {
+	public Chamado() {
 		super();
 	}
 
-	public Chamados(Integer id, Prioridade prioridade, Status status, String titulo, String observacoes,
+	public Chamado(Integer id, Prioridade prioridade, Status status, String titulo, String observacoes,
 			Tecnico tecnico, Cliente cliente) {
 		super();
 		this.id = id;
@@ -143,7 +143,7 @@ public class Chamados implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Chamados other = (Chamados) obj;
+		Chamado other = (Chamado) obj;
 		return Objects.equals(id, other.id);
 	}
 
