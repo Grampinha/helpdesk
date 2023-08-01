@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.grampinha.helpdesk.domain.Tecnico;
+import com.grampinha.helpdesk.domain.dtos.TecnicoDTO;
 import com.grampinha.helpdesk.repositories.TecnicoRepository;
 import com.grampinha.helpdesk.services.exceptions.ObjectnotFoundException;
 
@@ -25,5 +26,13 @@ public class TecnicoService {
 
 	public List<Tecnico> findAll() {
 		return repository.findAll();
+
+	}
+
+	public Tecnico create(TecnicoDTO objDTO) {
+		objDTO.setId(null);
+		Tecnico newObj = new Tecnico(objDTO);
+		return repository.save(newObj);
+
 	}
 }
